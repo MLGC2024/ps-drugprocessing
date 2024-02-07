@@ -59,6 +59,7 @@ local function ProcessCoke()
 		disableCombat = true,
 	}, {}, {}, {}, function()
 		TriggerServerEvent('ps-drugprocessing:processCocaLeaf')
+		TriggerEvent('wais:addmissionxp:processcocaleaf', 1) --added by pamela for wais battlepass
 
 		local timeLeft = Config.Delays.CokeProcessing / 1000
 		while timeLeft > 0 do
@@ -165,6 +166,7 @@ local function CutCokePowder()
 		disableCombat = true,
 	}, {}, {}, {}, function()
 		TriggerServerEvent('ps-drugprocessing:processCocaPowder')
+		TriggerEvent('wais:addmissionxp:processcocapow', 1) --added by pamela for wais battlepass
 
 		local timeLeft = Config.Delays.CokeProcessing / 1000
 		while timeLeft > 0 do
@@ -196,6 +198,7 @@ local function ProcessBricks()
 		disableCombat = true,
 	}, {}, {}, {}, function()
 		TriggerServerEvent('ps-drugprocessing:processCocaBrick')
+		TriggerEvent('wais:addmissionxp:processcocabrick', 1) --added by pamela for wais battlepass
 
 		local timeLeft = Config.Delays.CokeProcessing / 1000
 		while timeLeft > 0 do
@@ -332,6 +335,7 @@ RegisterNetEvent('ps-drugprocessing:pickCocaLeaves', function()
 				spawnedCocaLeaf = spawnedCocaLeaf - 1
 
 				TriggerServerEvent('ps-drugprocessing:pickedUpCocaLeaf')
+				TriggerEvent('wais:addmissionxp:harvestcocaleaf', 1) --added by pamela for wais battlepass
 				isPickingUp = false
 			end, function()
 				ClearPedTasks(playerPed)
